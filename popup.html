@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+
+<body>
+  <style>
+    .container {
+      max-height: 600px;
+      min-height: 300px;
+      width: 350px;
+      border: 2px solid rgba(0, 0, 0, 0.3);
+      border-radius: 2px;
+      background: white;
+    }
+    
+    body {
+      font-family: "Segoe UI", "Lucida Grande", Tahoma, sans-serif;
+      font-size: 100%;
+    }
+    
+    #status {
+      /* avoid an excessively wide status text */
+      white-space: pre;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      max-width: 400px;
+    }
+    
+    .patient-list {
+      max-height: 250px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+    
+    .bigger-label {
+      font-size: 14px;
+    }
+    
+    .innerDiv,#hostData {
+      padding-top: 10px;
+    }
+  </style>
+  <div class="container" id="container">
+    <div class="page-header">
+      <h3>CRM Localizer.</h3>
+    </div>
+    <div>
+      <button class="btn btn-success" id="goTo">Go To Local (Dev)!</button>
+    </div>
+    <br/>
+    <label for="">LocalHost Data</label>
+    <br/>
+    <button type="button" class="btn btn-default" id="divOpener" data-isopen="0">Open</button>
+     <br/>
+    <div id="hostData" style="display: none;">
+      <div class="form-group">
+        <label class="label label-info bigger-label">Localhost name</label>
+        <input class="form-control" type="text" id="localHost" value="http://localhost">
+      </div>
+      <div class="form-group">
+        <label class="label label-info bigger-label">Port</label>
+        <input class="form-control" type="text" id="PortNum" value="81">
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <label for="">Query string Data</label>
+    <div class="form-group" id="qsData">
+    </div>
+  </div>
+  <script src="/scripts/jquery.min.js" type="text/javascript"></script>
+  <script src="/scripts/extension.js" type="text/javascript"></script>
+</body>
+
+</html>
