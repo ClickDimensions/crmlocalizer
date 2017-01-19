@@ -4,10 +4,13 @@
      //  temp = temp.replace("https://mscrmappdev.clickdimensions.com", "http://localhost:" + portNumber);
 
      var clickdimensionsDomain = 'clickdimensions.com';
-     var index = crmHref.indexOf(clickdimensionsDomain) + clickdimensionsDomain.length
-     var domain = crmHref.substring(0, index)
-
-     crmHref = crmHref.replace(domain, localHostName + ":" + portNumber)
+     var index = crmHref.indexOf(clickdimensionsDomain)
+     if (index > -1) {
+         index += clickdimensionsDomain.length;
+         var domain = crmHref.substring(0, index)
+         crmHref = crmHref.replace(domain, localHostName + ":" + portNumber)
+     }
+     
      return crmHref.trim();
  }
 
