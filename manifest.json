@@ -2,7 +2,7 @@
     "manifest_version": 2,
     "name": "CRMLocalizer",
     "description": "Opens CRM IFrame in localhost",
-    "version": "1.0.2",
+    "version": "1.0.6",
     "browser_action": {
         "default_icon": "localhost.png",
         "default_popup": "popup.html",
@@ -11,11 +11,10 @@
     "content_scripts": [{
         "matches": ["<all_urls>"],
         "all_frames": true,
-        "js":      ["scripts/content.js"]
+        "js": ["scripts/content.js"]
     }],
     "permissions": [
         "activeTab"
     ],
     "content_security_policy": "script-src 'self' https://www.gstatic.com/; object-src 'self'"
 }
-
